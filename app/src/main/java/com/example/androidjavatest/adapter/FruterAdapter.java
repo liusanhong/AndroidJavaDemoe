@@ -45,8 +45,6 @@ public class FruterAdapter extends ArrayAdapter<Fruit> {
             view = convertView;
             viewHolder = (ViewHolder) view.getTag();
         }
-//        ImageView imageView = (ImageView) view.findViewById(R.id.fruit_image);
-//        TextView textView =(TextView) view.findViewById(R.id.fruit_name);
         viewHolder.fruitImage.setImageResource(fruit.getImageId());
         viewHolder.fruitName.setText(fruit.getName());
         return view;

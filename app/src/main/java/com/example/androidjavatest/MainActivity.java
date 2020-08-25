@@ -22,9 +22,13 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.list_view_tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this,ListViewDemo.class);
-//                startActivity(intent);
                 ListViewDemo.actionStart(MainActivity.this);
+            }
+        });
+        findViewById(R.id.recycler_view_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RecyclerViewDemo.actionStart(MainActivity.this);
             }
         });
 

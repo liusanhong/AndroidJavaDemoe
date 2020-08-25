@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 /**
- * @Description: java类作用描述
+ * @Description: 自定义组件
  * @Author: LQ
  * @CreateDate: 2020/8/24 5:45 PM
  */

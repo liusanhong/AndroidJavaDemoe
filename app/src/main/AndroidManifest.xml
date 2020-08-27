@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".pages.NewsActivity"></activity>
+        <activity android:name=".pages.NewsTwoPaneActivity" />
+        <activity android:name=".pages.NewsContentActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,9 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ListViewDemo" />
-        <activity android:name=".RecyclerViewDemo" />
+        <activity android:name=".pages.ListViewDemo" />
+        <activity android:name=".pages.RecyclerViewDemo" />
     </application>
 
 </manifest>

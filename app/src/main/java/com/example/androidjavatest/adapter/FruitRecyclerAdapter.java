@@ -49,7 +49,7 @@ public class FruitRecyclerAdapter extends RecyclerView.Adapter {
         holder.fruitView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = holder.getBindingAdapterPosition();
+                int position = holder.getAdapterPosition();
                 Fruit fruit = mFruitList.get(position);
                 Toast.makeText(parent.getContext(), fruit.getName(), Toast.LENGTH_SHORT).show();
             }

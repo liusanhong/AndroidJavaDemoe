@@ -1,18 +1,17 @@
-package com.example.androidjavatest;
+package com.example.androidjavatest.pages;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.androidjavatest.adapter.FruterAdapter;
+import com.example.androidjavatest.R;
+import com.example.androidjavatest.adapter.FruitRecyclerAdapter;
 import com.example.androidjavatest.model.Fruit;
 
 import java.util.ArrayList;
@@ -21,20 +20,20 @@ import java.util.List;
 /**
  * @Description: java类作用描述
  * @Author: LQ
- * @CreateDate: 2020/8/25 10:07 AM
+ * @CreateDate: 2020/8/25 4:15 PM
  */
-public class ListViewDemo extends AppCompatActivity {
+public class RecyclerViewDemo extends AppCompatActivity {
     private List<Fruit> fruitList = new ArrayList<Fruit>();
 
     public static void actionStart(Activity context){
-        Intent intent = new Intent(context,ListViewDemo.class);
+        Intent intent = new Intent(context,RecyclerViewDemo.class);
         context.startActivity(intent);
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listview_demo);
+        setContentView(R.layout.activity_recyclerview_demo);
         //        隐藏头部
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!= null){
@@ -42,16 +41,13 @@ public class ListViewDemo extends AppCompatActivity {
         }
 
         initFruit();
-        FruterAdapter fruterAdapter = new FruterAdapter(this,R.layout.fruit_item,fruitList);
-        ListView listView = (ListView)findViewById(R.id.list_view_lv);
-        listView.setAdapter(fruterAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Fruit fruit = fruitList.get(position);
-                Toast.makeText(ListViewDemo.this,fruit.getName(),Toast.LENGTH_SHORT).show();
-            }
-        });
+        FruitRecyclerAdapter fruitRecyclerAdapter = new FruitRecyclerAdapter(fruitList);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view_rv);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL); //横向
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(fruitRecyclerAdapter);
+
     }
 
     private void initFruit() {

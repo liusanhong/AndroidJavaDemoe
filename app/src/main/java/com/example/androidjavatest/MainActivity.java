@@ -3,9 +3,12 @@ package com.example.androidjavatest;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.androidjavatest.pages.ListViewDemo;
+import com.example.androidjavatest.pages.NewsActivity;
+import com.example.androidjavatest.pages.RecyclerViewDemo;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 RecyclerViewDemo.actionStart(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.news_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NewsActivity.actionStart(MainActivity.this);
             }
         });
 

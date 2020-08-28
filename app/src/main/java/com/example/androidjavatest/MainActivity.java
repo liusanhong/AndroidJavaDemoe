@@ -1,16 +1,25 @@
 package com.example.androidjavatest;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import com.example.androidjavatest.broadcast.MyBroadcastReceiver;
 import com.example.androidjavatest.pages.ListViewDemo;
 import com.example.androidjavatest.pages.NewsActivity;
 import com.example.androidjavatest.pages.RecyclerViewDemo;
 
 public class MainActivity extends AppCompatActivity {
+    LocalBroadcastManager localBroadcastManager;
+    private MyBroadcastReceiver myBroadcastReceiver;
+    private IntentFilter intentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +50,31 @@ public class MainActivity extends AppCompatActivity {
                 NewsActivity.actionStart(MainActivity.this);
             }
         });
+        localBroadcastManager = LocalBroadcastManager.getInstance(MainActivity.this);
 
+        findViewById(R.id.broadcast_commend_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.e("MyBroadcastReceiver","MyBroadcastReceiver onClick");
 
+                Intent intent = new Intent();
+                intent.setAction("cn.programmer.CUSTOM_INTENT"); //todo 为什么无效？？？？？
+//                通过制定发送
+//                intent.setComponent(new ComponentName("com.example.androidjavatest","com.example.androidjavatest.broadcast.MyBroadcastReceiver"));
+//                sendBroadcast(intent);
+                localBroadcastManager.sendBroadcast(intent);
+            }
+        });
+//        本地发送广播，不会广播到程序外
+        myBroadcastReceiver = new MyBroadcastReceiver();
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("cn.programmer.CUSTOM_INTENT");
+        localBroadcastManager.registerReceiver(myBroadcastReceiver,intentFilter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        localBroadcastManager.unregisterReceiver(myBroadcastReceiver);
     }
 }

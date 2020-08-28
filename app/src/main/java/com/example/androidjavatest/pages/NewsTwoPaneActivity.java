@@ -7,6 +7,9 @@ import android.os.Bundle;
 import com.example.androidjavatest.R;
 
 @Deprecated
+/**
+ * 没有使用
+ */
 public class NewsTwoPaneActivity extends AppCompatActivity {
 
     @Override

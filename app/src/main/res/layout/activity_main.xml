@@ -33,4 +33,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="News!" />
+
+    <TextView
+        android:id="@+id/broadcast_commend_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="标准广播!" />
 </LinearLayout>

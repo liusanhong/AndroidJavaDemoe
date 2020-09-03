@@ -15,6 +15,7 @@ import com.example.androidjavatest.broadcast.MyBroadcastReceiver;
 import com.example.androidjavatest.pages.ListViewDemo;
 import com.example.androidjavatest.pages.NewsActivity;
 import com.example.androidjavatest.pages.RecyclerViewDemo;
+import com.example.androidjavatest.pages.SaveActivity;
 
 public class MainActivity extends AppCompatActivity {
     LocalBroadcastManager localBroadcastManager;
@@ -70,7 +71,18 @@ public class MainActivity extends AppCompatActivity {
         intentFilter = new IntentFilter();
         intentFilter.addAction("cn.programmer.CUSTOM_INTENT");
         localBroadcastManager.registerReceiver(myBroadcastReceiver,intentFilter);
+
+
+
+        findViewById(R.id.save_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SaveActivity.actionStart(MainActivity.this);
+            }
+        });
     }
+
+
 
     @Override
     protected void onDestroy() {

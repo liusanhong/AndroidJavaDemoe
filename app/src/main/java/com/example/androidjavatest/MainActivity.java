@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.androidjavatest.broadcast.MyBroadcastReceiver;
+import com.example.androidjavatest.pages.DbActivity;
 import com.example.androidjavatest.pages.ListViewDemo;
 import com.example.androidjavatest.pages.NewsActivity;
 import com.example.androidjavatest.pages.RecyclerViewDemo;
@@ -78,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SaveActivity.actionStart(MainActivity.this);
+            }
+        });
+
+        findViewById(R.id.save_db).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DbActivity.actionStart(MainActivity.this);
             }
         });
     }

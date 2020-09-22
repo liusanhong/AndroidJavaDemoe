@@ -47,6 +47,7 @@
         </activity>
         <activity android:name=".pages.ListViewDemo" />
         <activity android:name=".pages.RecyclerViewDemo" />
+        <activity android:name=".pages.DbActivity" />
     </application>
 
 </manifest>

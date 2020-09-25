@@ -13,45 +13,64 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:id="@+id/list_view_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="ListView!" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/recycler_view_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="RecyclerView!" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/news_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="News!" />
+            <TextView
+                android:id="@+id/list_view_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="ListView!" />
 
-    <TextView
-        android:id="@+id/broadcast_commend_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="标准广播!" />
+            <TextView
+                android:id="@+id/recycler_view_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="RecyclerView!" />
 
-    <TextView
-        android:id="@+id/save_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Save!!" />
+            <TextView
+                android:id="@+id/news_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="News!" />
 
-    <TextView
-        android:id="@+id/save_db"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="DB!!" />
+            <TextView
+                android:id="@+id/broadcast_commend_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="标准广播!" />
+
+            <TextView
+                android:id="@+id/save_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="Save!!" />
+
+            <TextView
+                android:id="@+id/save_db"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="DB!!" />
+
+            <TextView
+                android:id="@+id/multimedia_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="multimedia!!" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

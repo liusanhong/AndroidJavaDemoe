@@ -14,6 +14,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.example.androidjavatest.broadcast.MyBroadcastReceiver;
 import com.example.androidjavatest.pages.DbActivity;
 import com.example.androidjavatest.pages.ListViewDemo;
+import com.example.androidjavatest.pages.MultimediaActivity;
 import com.example.androidjavatest.pages.NewsActivity;
 import com.example.androidjavatest.pages.RecyclerViewDemo;
 import com.example.androidjavatest.pages.SaveActivity;
@@ -86,6 +87,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DbActivity.actionStart(MainActivity.this);
+            }
+        });
+        findViewById(R.id.multimedia_tv).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MultimediaActivity.actionStart(MainActivity.this);
             }
         });
     }
